@@ -1,0 +1,155 @@
+chatmenu: ALT + T
+bmarket: D
+diplomacy: ALT + D
+vill: A
+colors: CTRL + SHIFT + ALT + G
+bgate: Z
+follow: E
+mill: 6
+bnext: V
+ground: R
+pause: F3
+bwall: D
+btower: F
+stable: CTRL + S
+tc: H
+noattack: F
+stop: SHIFT + F
+scout: A
+idlem2: RESERVED
+bdock: T
+knight: S
+bpalisade: S
+uu: A
+bfeitoria: B
+emap: ALT + W
+treb: S
+brange: W
+bcannon: F
+btc: Z
+boutpost: A
+stats: F4
+mbuild: V
+selected: SHIFT + SPACEBAR
+lumber: 7
+bhouse: Q
+slow: SUBTRACT
+box: X
+convert: Q
+last: SPACEBAR
+brax: Q
+monk: A
+bbombard: G
+cog: Z
+bstable: E
+scorpion: D
+spear: S
+demoship: D
+nmap: ALT + R
+siegetower: V
+bmonastery: F
+market: CTRL + X
+blumber: E
+chatback: PAGE UP
+petard: D
+setgather: T
+unpack: U
+cgroup7: CTRL + W
+cgroup6: CTRL + Q
+cgroup5: CTRL + 5
+cgroup4: CTRL + 4
+cgroup3: CTRL + 3
+cgroup2: CTRL + 2
+cgroup1: CTRL + 1
+cgroup0: CTRL + ~
+work: G
+cgroup9: CTRL + R
+cgroup8: CTRL + E
+archer: A
+bpgate: X
+def: S
+pack: X
+patrol: Q
+skirm: S
+cavarcher: D
+sgroup7: SHIFT + W
+sgroup6: SHIFT + Q
+sgroup5: 5
+flank: V
+sgroup3: 3
+sgroup2: 2
+sgroup1: 1
+elephant: F
+sgroup9: SHIFT + R
+sgroup8: SHIFT + E
+bmining: R
+buniversity: G
+gcannon: G
+left: LEFT ARROW
+camel: D
+mission: S
+bell: B
+smith: CTRL + Z
+genitour: V
+sgroup4: 4
+save: F12
+sword: A
+sgroup0: SHIFT + ~
+tc2: NULL
+dock: CTRL + T
+university: CTRL + V
+huskarl: D
+btrap: R
+bmill: W
+turtle: C
+right: RIGHT ARROW
+fish: A
+back: BACKSPACE
+bsmith: S
+last2: PA1
+transport: X
+eagle: F
+siege: CTRL + F
+cart: A
+bfarm: A
+chapter: F9
+chatfor: PAGE DOWN
+flare: ALT + F
+range: CTRL + A
+cmap: ALT + E
+stand: D
+castle: CTRL + G
+repair: D
+down: DOWN ARROW
+guard: W
+galley: F
+fast: ADD
+attack: A
+mining: 8
+heal: W
+hcannon: F
+bsiege: R
+line: Z
+mangonel: S
+up: UP ARROW
+bcastle: C
+garrison: G
+delete: DEL
+idlev2: TAB
+idlem: ,
+ram: A
+idlev: .
+seed: F
+chat: ENTER
+rax: CTRL + D
+caravel: J
+fireship: S
+build: B
+bwonder: X
+monastery: CTRL + C
+object: ALT + O
+stag: C
+unload: Z
+agg: SHIFT + A
+tech: F2
+time: F11

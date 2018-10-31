@@ -1,3 +1,7 @@
+# Custom ignored files
+run_python27.bat
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

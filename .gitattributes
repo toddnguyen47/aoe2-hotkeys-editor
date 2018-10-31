@@ -1,0 +1,12 @@
+* text=auto eol=lf
+
+# Explicitly declare text files
+*.txt text
+*.py text
+*.html text
+
+# Explicitly declare binary files
+*.jpeg binary
+*.jpg binary
+*.png binary
+*.pyc binary
