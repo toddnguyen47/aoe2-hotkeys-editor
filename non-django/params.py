@@ -2,6 +2,9 @@ import os
 
 cur_dir = os.getcwd()
 
+# Keycode file
+WINDOWS_KEYCODES_FILE = os.path.join(cur_dir, "utils/WindowsKeycodes.csv")
+
 # Input hki file
 INPUT_FILE = os.path.join(cur_dir, "hki_files/player0.hki")
 

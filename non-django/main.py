@@ -91,8 +91,7 @@ def get_keycodes(keycode_as_dictkey):
     # Arguments
     keycode_as_dictkey  -> True if you want the keycode to be the dictionary's key, false otherwise
     """
-    keycode_file = "keycodes.csv"
-    with open(keycode_file, "r") as file:
+    with open(params.WINDOWS_KEYCODES_FILE, "r") as file:
         data = file.read()
     
     data = data.split("\n")

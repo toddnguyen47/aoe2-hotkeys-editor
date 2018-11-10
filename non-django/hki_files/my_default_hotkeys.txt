@@ -5,7 +5,7 @@ vill: A
 colors: CTRL + SHIFT + ALT + G
 bgate: Z
 follow: E
-mill: 6
+mill: SHIFT + 6
 bnext: V
 ground: R
 pause: F3
@@ -31,7 +31,7 @@ boutpost: A
 stats: F4
 mbuild: V
 selected: SHIFT + SPACEBAR
-lumber: 7
+lumber: SHIFT + 7
 bhouse: Q
 slow: SUBTRACT
 box: X
@@ -49,7 +49,7 @@ nmap: ALT + R
 siegetower: V
 bmonastery: F
 market: CTRL + X
-blumber: E
+blumber: 7
 chatback: PAGE UP
 petard: D
 setgather: T
@@ -82,7 +82,7 @@ sgroup1: 1
 elephant: F
 sgroup9: SHIFT + R
 sgroup8: SHIFT + E
-bmining: R
+bmining: 8
 buniversity: G
 gcannon: G
 left: LEFT ARROW
@@ -125,7 +125,7 @@ guard: W
 galley: F
 fast: ADD
 attack: A
-mining: 8
+mining: SHIFT + 8
 heal: W
 hcannon: F
 bsiege: R
