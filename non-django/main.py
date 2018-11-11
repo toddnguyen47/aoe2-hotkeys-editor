@@ -21,7 +21,8 @@ def export_hki():
             new_key_inputs = line_split[1].strip()
 
             # Only check if the hotkey assign key is not empty
-            if hotkeyassign_key:
+            # AND the hotkeys exists in the hotkeys.hk_ids
+            if hotkeyassign_key and hotkeyassign_key in hotkeys.hk_ids:
                 # Save current hotkey into a temporary dict
                 cur_hotkey_dict = hotkey_obj[hotkeyassign_key]
 
@@ -55,31 +56,46 @@ def read_in_hki_file():
     # Get all the Windows keycodes
     keypress_dict = get_keycodes(keycode_as_dictkey=True)
 
+    hotkey_keys_dict = {}
+    # Get all hotkey controls from the hki file
+    for element in hotkey_obj:
+        controls_list = element[1]
+        hotkey_name = element[0]
+        # Code for key being used
+        cur_key = keypress_dict[controls_list['code']]
+
+        # See if any modifier keys were used
+        ctrl_used = controls_list['ctrl']
+        shift_used = controls_list['shift']
+        alt_used = controls_list['alt']
+
+        # Key used string example: CTRL + SHIFT + ALT + G
+        key_used_str = cur_key
+        if alt_used:
+            key_used_str = " ".join(("ALT +", key_used_str))
+        if shift_used:
+            key_used_str = " ".join(("SHIFT +", key_used_str))
+        if ctrl_used:
+            key_used_str = " ".join(("CTRL +", key_used_str))
+
+        hotkey_keys_dict[hotkey_name] = key_used_str
+
     # Export to file
     with open(params.HOTKEY_LIST_FILE, "w") as output_file:
-        for element in hotkey_obj:
-            controls_list = element[1]
-            hotkey_name = element[0]
-            # Code for key being used
-            cur_key = keypress_dict[controls_list['code']]
+        # For each "group" in hk_groups
+        for group in hotkeys.hk_groups:
+            group_name = group[0]
+            key_groups = group[1]
+            output_file.write("".join((group_name, ":\n")))
+            for key in key_groups:
+                # If no keys
+                controls = ""
+                # If there is a key
+                if key in hotkey_keys_dict:
+                    controls = hotkey_keys_dict[key]
+                output_file.write("".join((key, ": ", controls, "\n")))
+            output_file.write("\n")
 
-            # See if any modifier keys were used
-            ctrl_used = controls_list['ctrl']
-            shift_used = controls_list['shift']
-            alt_used = controls_list['alt']
-
-            # Key used string example: CTRL + SHIFT + ALT + G
-            key_used_str = cur_key
-            if alt_used:
-                key_used_str = " ".join(("ALT +", key_used_str))
-            if shift_used:
-                key_used_str = " ".join(("SHIFT +", key_used_str))
-            if ctrl_used:
-                key_used_str = " ".join(("CTRL +", key_used_str))
-
-            # Write it to a file
-            output_file.write("{}: {}\n".format(hotkey_name, key_used_str))
-    
     print("Exported to {}".format(params.HOTKEY_LIST_FILE).replace("\\", "/"))
 
 
@@ -114,9 +130,9 @@ def get_keycodes(keycode_as_dictkey):
 
 
 def print_error():
-    print("Valid arguments are:")
-    print("[1] read")
-    print("[2] write")
+    print("Valid command line arguments are:")
+    print(">>> read")
+    print(">>> write")
 
 
 if __name__ == "__main__":

@@ -365,10 +365,7 @@ hk_desc = {
 }
 
 
-
 hk_groups = [
-    
-    
     ('Menus', [
         'object',
         'tech' ,
