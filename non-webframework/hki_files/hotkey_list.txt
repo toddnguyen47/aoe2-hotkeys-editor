@@ -1,0 +1,228 @@
+Menus:
+object: ALT + O
+tech: F2
+chatmenu: ALT + T
+diplomacy: ALT + D
+
+Settings:
+colors: CTRL + SHIFT + ALT + G
+stats: F4
+time: F11
+emap: ALT + W
+cmap: ALT + E
+nmap: ALT + R
+slow: SUBTRACT
+fast: ADD
+
+Game Commands:
+flare: ALT + F
+pause: F3
+save: F12
+chapter: F9
+
+Chat:
+chat: ENTER
+chatback: PAGE UP
+chatfor: PAGE DOWN
+
+Scrolling:
+up: UP ARROW
+left: LEFT ARROW
+right: RIGHT ARROW
+down: DOWN ARROW
+
+Control Groups:
+cgroup0: CTRL + ~
+cgroup1: CTRL + 1
+cgroup2: CTRL + 2
+cgroup3: CTRL + 3
+cgroup4: CTRL + 4
+cgroup5: CTRL + 5
+cgroup6: CTRL + Q
+cgroup7: CTRL + W
+cgroup8: CTRL + E
+cgroup9: CTRL + R
+cgroup10: 
+cgroup11: 
+cgroup12: 
+cgroup13: 
+cgroup14: 
+cgroup15: 
+cgroup16: 
+cgroup17: 
+cgroup18: 
+cgroup19: 
+sgroup0: SHIFT + ~
+sgroup1: 1
+sgroup2: 2
+sgroup3: 3
+sgroup4: 4
+sgroup5: 5
+sgroup6: SHIFT + Q
+sgroup7: SHIFT + W
+sgroup8: SHIFT + E
+sgroup9: SHIFT + R
+sgroup10: 
+sgroup11: 
+sgroup12: 
+sgroup13: 
+sgroup14: 
+sgroup15: 
+sgroup16: 
+sgroup17: 
+sgroup18: 
+sgroup19: 
+
+Go-To Commands:
+mill: SHIFT + 6
+mining: SHIFT + 8
+lumber: SHIFT + 7
+dock: CTRL + T
+smith: CTRL + Z
+market: CTRL + X
+monastery: CTRL + C
+university: CTRL + V
+tc: H
+tc2: NULL
+rax: CTRL + D
+range: CTRL + A
+stable: CTRL + S
+siege: CTRL + F
+castle: CTRL + G
+idlem: ,
+idlem2: RESERVED
+idlev: .
+idlev2: TAB
+selected: SHIFT + SPACEBAR
+last: SPACEBAR
+last2: PA1
+back: BACKSPACE
+
+All Units:
+delete: DEL
+garrison: G
+stop: SHIFT + F
+
+Military Units:
+attack: A
+patrol: Q
+guard: W
+follow: E
+agg: SHIFT + A
+def: S
+stand: D
+noattack: F
+line: Z
+box: X
+stag: C
+flank: V
+
+Siege Units:
+unpack: U
+pack: X
+ground: R
+
+Monks:
+convert: Q
+heal: W
+
+Villagers:
+build: B
+mbuild: V
+repair: D
+
+Buildings/Transports:
+setgather: T
+work: G
+unload: Z
+
+Economic Build Menu:
+bhouse: Q
+bmill: W
+bmining: 8
+blumber: 7
+bdock: T
+bfarm: A
+bsmith: S
+bmarket: D
+bmonastery: F
+buniversity: G
+btc: Z
+bwonder: X
+bfeitoria: B
+bnext: V
+
+Military Build Menu:
+brax: Q
+brange: W
+bstable: E
+bsiege: R
+boutpost: A
+bpalisade: S
+bwall: D
+btower: F
+bbombard: G
+bgate: Z
+bpgate: X
+bcastle: C
+
+Fishing Ship Build:
+btrap: R
+
+Town Center:
+vill: A
+bell: B
+
+Dock:
+fish: A
+transport: X
+cog: Z
+galley: F
+demoship: D
+fireship: S
+gcannon: G
+longboat: 
+caravel: J
+turtle: C
+
+Barracks:
+sword: A
+spear: S
+huskarl: D
+eagle: F
+
+Archery Range:
+archer: A
+skirm: S
+cavarcher: D
+genitour: V
+hcannon: F
+
+Stable:
+scout: A
+knight: S
+camel: D
+elephant: F
+
+Siege Workshop:
+ram: A
+mangonel: S
+scorpion: D
+bcannon: F
+siegetower: V
+
+Monastery:
+monk: A
+mission: S
+
+Market:
+cart: A
+
+Castle:
+uu: A
+treb: S
+petard: D
+
+Mill:
+seed: F
+
