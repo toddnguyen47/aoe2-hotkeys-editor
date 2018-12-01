@@ -4,6 +4,12 @@ import zlib
 import itertools
 
 def compress(input):
+    """
+    Compress the input using zlib and return that byte compression
+    
+    # ARGUMENTS
+    input   -> The bytearray input
+    """
     c = zlib.compressobj(zlib.Z_DEFAULT_COMPRESSION, zlib.DEFLATED, -zlib.MAX_WBITS, zlib.DEF_MEM_LEVEL, zlib.Z_DEFAULT_STRATEGY)
     output = c.compress(input)
     return output + c.flush()

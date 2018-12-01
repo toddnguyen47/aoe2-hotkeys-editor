@@ -1,15 +1,67 @@
 import modules.hotkeys as hotkeys
 import params
 import sys
+import os
 
 
 def export_hki():
-    code_dict = get_keycodes(keycode_as_dictkey=False)
+    """
+    Export from a text input file (for now) to a .hki file.
+    
+    # FILES
+    Hki input file      -> params.HKI_INPUT_FILE
+    Text input file     -> params.HOTKEY_TEXT_TO_EXPORT_HKI
+    Output file         -> params.HKI_OUTPUT_FILE
+    """
+    if os.path.isfile(params.HKI_OUTPUT_FILE):
+        filename_only = os.path.basename(params.HKI_OUTPUT_FILE)
+        overwrite = input("File {} exists. Would you like to overwrite it? (Y/N):\n>>> ".format(filename_only))
+        if overwrite.lower() != "y":
+            print("Exiting...")
+            exit(0)
 
-    hotkey_obj = hotkeys.HotkeyFile(open(params.INPUT_FILE, "rb").read())
+    with open(params.HKI_INPUT_FILE, "rb") as file:
+        bytes_read = file.read()
+        hotkey_obj = hotkeys.HotkeyFile(bytes_read)
     # hotkeyassign_obj = hotkeys.HotkeyAssign(hotkey_obj)
 
-    with open(params.HOTKEY_BACKUP_FILE, "r") as file:
+    # binary_output = hotkey_obj.serialize()
+    # with open(params.HKI_OUTPUT_FILE, "wb") as file:
+        # file.write(binary_output)
+    
+    # Get a dictionary of newly obtained keys
+    parsed_dict = export_hki_parser()
+    
+    
+    # For each sequential memory element in the hki file
+    for memory_obj in hotkey_obj:
+        hotkey_name = memory_obj[0]
+        new_key_inputs = parsed_dict[hotkey_name]
+        
+        temp_dict = memory_obj
+        memory_obj[1].update(new_key_inputs)
+
+    # Export to hki file
+    binary_output = hotkey_obj.serialize()
+    with open(params.HKI_OUTPUT_FILE, "wb") as file:
+        file.write(binary_output)
+    
+    print("Finished outputting to {}".format(params.HKI_OUTPUT_FILE.replace("\\", "/")))
+
+
+def export_hki_parser():
+    """
+    Parse the text input file and return a dictionary.
+    Dict[hk_id] = {Keys being used, ctrl, alt, shift,}
+    
+    # FILES
+    Input text file     -> params.HOTKEY_TEXT_TO_EXPORT_HKI
+    """
+    key_dict = {}
+    code_dict = get_keycodes(keycode_as_dictkey=False)
+
+    # Parse the input file first
+    with open(params.HOTKEY_TEXT_TO_EXPORT_HKI, "r") as file:
         data = file.read()
     
     data = data.split("\n")
@@ -23,9 +75,6 @@ def export_hki():
             # Only check if the hotkey assign key is not empty
             # AND the hotkeys exists in the hotkeys.hk_ids
             if hotkeyassign_key and hotkeyassign_key in hotkeys.hk_ids:
-                # Save current hotkey into a temporary dict
-                cur_hotkey_dict = hotkey_obj[hotkeyassign_key]
-
                 # If CTRL key was used
                 ctrl_used = True if "CTRL" in new_key_inputs else False
                 # If ALT key was used
@@ -39,20 +88,31 @@ def export_hki():
                 else:
                     actual_key = new_key_inputs.strip()
                 
-                actual_key_code = code_dict[actual_key]
-                # Update our dictionary
-                cur_hotkey_dict.update({'code': actual_key_code, 'ctrl': ctrl_used, 'alt': alt_used, 'shift': shift_used})
+                # If the key is not empty
+                if actual_key:
+                    actual_key_code = code_dict[actual_key]
 
-    binary_output = hotkey_obj.serialize()
-    with open(params.OUTPUT_FILE, "wb") as file:
-        file.write(binary_output)
-    
-    print("Finished outputting to " + params.OUTPUT_FILE)
+                # Update our dictionary
+                # cur_hotkey_dict.update({'code': actual_key_code, 'ctrl': ctrl_used, 'alt': alt_used, 'shift': shift_used})
+                
+                key_dict[hotkeyassign_key] = {'code': actual_key_code, 'ctrl': ctrl_used, 'alt': alt_used, 'shift': shift_used}
+
+    return key_dict
 
 
 def read_in_hki_file():
+    """
+    Read in a HKI file and export it to params.HOTKEY_LIST_FILE
+    """
+    if os.path.isfile(params.HOTKEY_LIST_FILE):
+        filename_only = os.path.basename(params.HOTKEY_LIST_FILE)
+        overwrite = input("File {} exists. Would you like to overwrite it? (Y/N):\n>>> ".format(filename_only))
+        if overwrite.lower() != "y":
+            print("Exiting...")
+            exit(0)
+
     # Open the binary hki file and uncompress it
-    hotkey_obj = hotkeys.HotkeyFile(open(params.INPUT_FILE, "rb").read())
+    hotkey_obj = hotkeys.HotkeyFile(open(params.HKI_INPUT_FILE, "rb").read())
     # Get all the Windows keycodes
     keypress_dict = get_keycodes(keycode_as_dictkey=True)
 
@@ -137,8 +197,8 @@ def print_error():
 
 if __name__ == "__main__":
     # Use only with Python 2.7
-    if sys.version_info[0] > 2:
-        raise Exception("Please run this file with Python 2.7")
+    if sys.version_info[0] < 3:
+        raise Exception("Please run this file with Python 3")
     if len(sys.argv) < 2:
         print("Please provide a command line arguments.")
         print_error()

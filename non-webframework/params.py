@@ -6,13 +6,13 @@ cur_dir = os.getcwd()
 WINDOWS_KEYCODES_FILE = os.path.join(cur_dir, "utils/WindowsKeyboardKeycodes.csv")
 
 # Input hki file
-INPUT_FILE = os.path.join(cur_dir, "hki_files/player0.hki")
+HKI_INPUT_FILE = os.path.join(cur_dir, "hki_files/player0.hki")
 
 # Output hki file
-OUTPUT_FILE = os.path.join(cur_dir, "hki_files/player000.hki")
+HKI_OUTPUT_FILE = os.path.join(cur_dir, "hki_files/player000.hki")
 
 # The extracted hotkey list file
 HOTKEY_LIST_FILE = os.path.join(cur_dir, "hki_files/hotkey_list.txt")
 
-# Backup changed hotkey file
-HOTKEY_BACKUP_FILE = os.path.join(cur_dir, "hki_files/hotkey_list1.txt")
+# Changed text file to export to HKI
+HOTKEY_TEXT_TO_EXPORT_HKI = os.path.join(cur_dir, "hki_files/hotkey_list1.txt")

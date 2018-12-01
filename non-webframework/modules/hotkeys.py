@@ -625,6 +625,9 @@ class HotkeyAssign:
 class HotkeyFile:
 
     def __init__(self, hki):
+        """
+        hki is BYTES, not the file name
+        """
         hk_data = hkizip.decompress(hki)
         offset = 0
         header, = header_format.unpack_from(hk_data, offset)
@@ -685,7 +688,7 @@ class HotkeyFile:
                 hk_format.pack_into(raw, offset, *Hotkey(**hotkey))
                 offset += hk_format.size
         assert offset == self._file_size
-        return hkizip.compress(str(raw))
+        return hkizip.compress((raw))
 
 if __name__ == '__main__':
     import sys
