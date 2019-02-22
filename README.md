@@ -5,7 +5,7 @@ A fork of crimsoncantab's [AoC Hotkey Editor](https://github.com/crimsoncantab/a
 You will need to download and install [Python 3+](https://www.python.org/downloads/).
 
 # How to Run
-First, go into the non-webframework folder.
+First, go into the `non-webframework` folder.
 
 NOTE: If at any time you are lost, type into a command line
 ```

@@ -8,11 +8,11 @@ Settings:
 colors: CTRL + SHIFT + ALT + G
 stats: F4
 time: F11
-emap: ALT + R
-cmap: ALT + C
-nmap: ALT + N
-slow: CTRL + SHIFT + SUBTRACT
-fast: CTRL + SHIFT + ADD
+emap: ALT + W
+cmap: ALT + E
+nmap: ALT + R
+slow: CTRL + SHIFT + ALT + SUBTRACT
+fast: CTRL + SHIFT + ALT + ADD
 
 Game Commands:
 flare: ALT + F
@@ -32,16 +32,16 @@ right: RIGHT ARROW
 down: DOWN ARROW
 
 Control Groups:
-cgroup0: CTRL + 0
+cgroup0: CTRL + ~
 cgroup1: CTRL + 1
 cgroup2: CTRL + 2
 cgroup3: CTRL + 3
 cgroup4: CTRL + 4
 cgroup5: CTRL + 5
-cgroup6: CTRL + 6
-cgroup7: CTRL + 7
-cgroup8: CTRL + 8
-cgroup9: CTRL + 9
+cgroup6: CTRL + Q
+cgroup7: CTRL + W
+cgroup8: CTRL + E
+cgroup9: CTRL + R
 cgroup10: 
 cgroup11: 
 cgroup12: 
@@ -52,16 +52,16 @@ cgroup16:
 cgroup17: 
 cgroup18: 
 cgroup19: 
-sgroup0: 0
+sgroup0: ~
 sgroup1: 1
 sgroup2: 2
 sgroup3: 3
 sgroup4: 4
 sgroup5: 5
-sgroup6: 6
-sgroup7: 7
-sgroup8: 8
-sgroup9: 9
+sgroup6: Q
+sgroup7: W
+sgroup8: E
+sgroup9: R
 sgroup10: 
 sgroup11: 
 sgroup12: 
@@ -83,35 +83,35 @@ market: CTRL + X
 monastery: CTRL + C
 university: CTRL + V
 tc: H
-tc2: RESERVED
-rax: Y
-range: U
-stable: I
-siege: O
+tc2: NULL
+rax: 6
+range: 7
+stable: 8
+siege: 9
 castle: T
 idlem: ,
-idlem2: NULL
-idlev: TAB
-idlev2: ZOOM
-selected: SPACEBAR
-last: SHIFT + SPACEBAR
+idlem2: RESERVED
+idlev: .
+idlev2: TAB
+selected: SHIFT + SPACEBAR
+last: SPACEBAR
 last2: PA1
 back: BACKSPACE
 
 All Units:
 delete: DEL
 garrison: G
-stop: F
+stop: SHIFT + F
 
 Military Units:
 attack: A
 patrol: D
-guard: W
-follow: E
+guard: CTRL + SHIFT + W
+follow: CTRL + SHIFT + E
 agg: SHIFT + A
-def: SHIFT + S
+def: CTRL + SHIFT + ALT + S
 stand: SHIFT + D
-noattack: B
+noattack: F
 line: Z
 box: X
 stag: C
@@ -132,7 +132,7 @@ mbuild: V
 repair: D
 
 Buildings/Transports:
-setgather: T
+setgather: Y
 work: G
 unload: Z
 
@@ -171,7 +171,7 @@ btrap: R
 
 Town Center:
 vill: A
-bell: B
+bell: CTRL + SHIFT + ALT + B
 
 Dock:
 fish: A
@@ -186,29 +186,29 @@ caravel: J
 turtle: C
 
 Barracks:
-sword: J
-spear: K
-huskarl: ;
-eagle: L
+sword: A
+spear: S
+huskarl: D
+eagle: F
 
 Archery Range:
-archer: J
-skirm: K
-cavarcher: L
+archer: A
+skirm: S
+cavarcher: D
 genitour: V
-hcannon: ;
+hcannon: F
 
 Stable:
-scout: J
-knight: K
-camel: L
-elephant: ;
+scout: A
+knight: S
+camel: D
+elephant: F
 
 Siege Workshop:
-ram: J
-mangonel: K
-scorpion: L
-bcannon: ;
+ram: A
+mangonel: S
+scorpion: D
+bcannon: F
 siegetower: V
 
 Monastery:
@@ -219,9 +219,9 @@ Market:
 cart: A
 
 Castle:
-uu: J
-treb: K
-petard: L
+uu: A
+treb: S
+petard: D
 
 Mill:
 seed: F
