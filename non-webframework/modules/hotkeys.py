@@ -614,7 +614,7 @@ class HotkeyAssign:
     def __init__(self, hkfile):
         self.version, self.hotkeys = hkfile.version, { k : copy_dict(v,'code', 'ctrl', 'alt', 'shift') for (k,v) in hkfile}
         self.update()
-        
+
     def get_hotkeys(self, version_hotkeys):
         return {k : v for (k,v) in self.hotkeys.items() if k in version_hotkeys}
 
@@ -658,7 +658,7 @@ class HotkeyFile:
                 offset += hk_format.size
                 menu.append(hotkey)
 
-        
+
         self.data, self.hk_map, self.version = data, hk_map, version
         self._header, self._file_size= header, offset
 
@@ -667,7 +667,7 @@ class HotkeyFile:
 
     def __contains__(self, key):
         return key in hk_ids and hk_ids[key] in self.hk_map
-        
+
     def __iter__(self):
         for k in hk_ids:
             if k in self:
@@ -675,7 +675,7 @@ class HotkeyFile:
 
     def serialize(self):
         offset = 0
-        #update raw from data
+        # update raw from data
         raw = bytearray(self._file_size)
         header_format.pack_into(raw, offset, self._header)
         offset += header_format.size
@@ -696,5 +696,5 @@ if __name__ == '__main__':
     hotkey_file = HotkeyFile(hki)
     for i, hk in enumerate(hk_groups[2][1]):
         hotkey_file[hk]['code'] = 252 - i
-    
+
     #print hotkey_file.data

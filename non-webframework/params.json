@@ -1,0 +1,4 @@
+{
+  "windowsKeycodeFile": "utils/WindowsKeyboardKeycodes.csv",
+  "baseHkiFile": "hki_files/SteamDefault.hki"
+}
